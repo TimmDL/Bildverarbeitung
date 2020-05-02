@@ -13,11 +13,11 @@ def testePixelLoop (img):
                 pass # do nothing
           
 
-# b)
+# 2)
  #  def testePixelBroadcast (img):
        
 
-# c)
+# 3)
 img = imread("mandrill.png")
     
 # 100 Aufrufe der Schleifen Funktion
@@ -27,8 +27,8 @@ while i < 10:
     testePixelLoop(img) 
     i += 1
 toc = time.time()
-diff = toc - tic
-print("Rechendauer mit Schleife: " +  str(diff))  
+diffLoop = toc - tic
+print("Rechendauer mit Schleife: " +  str(diffLoop))  
     
 # 100 Aufrufe der Broadcast Funktion
 tic = time.time()
@@ -38,11 +38,12 @@ i = 0
 
 #testePixelBroadcast(img) 
 toc = time.time()
-diff = toc - tic
-print("Rechendauer mit Broadcasting: " +  str(diff))  
-    
-    
- #   testePixelBroadcast(img)
+diffBroad = toc - tic
+print("Rechendauer mit Broadcasting: " +  str(diffBroad))
+
+print("Differenz: " + str(diffLoop - diffBroad))
+
+
        
     
     
