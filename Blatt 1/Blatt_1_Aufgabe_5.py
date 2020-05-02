@@ -2,7 +2,6 @@
 
 import numpy as np
 from skimage.io import imread, imsave
-import matplotlib.pyplot as plt
 import time
 
 # 1)
@@ -23,7 +22,7 @@ img = imread("mandrill.png")
 # 100 Aufrufe der Schleifen Funktion
 tic = time.time()
 i = 0
-while i < 10:
+while i < 100:
     testePixelLoop(img) 
     i += 1
 toc = time.time()
@@ -34,12 +33,12 @@ print("Rechendauer mit Schleife: " +  str(diffLoop))
 tic = time.time()
 i = 0
    ## while i < 100:
-   ##   i += 1
-
-#testePixelBroadcast(img) 
+        # testePixelBroadcast(img) 
+       ##   i += 1
 toc = time.time()
 diffBroad = toc - tic
 print("Rechendauer mit Broadcasting: " +  str(diffBroad))
+
 
 print("Differenz: " + str(diffLoop - diffBroad))
 
