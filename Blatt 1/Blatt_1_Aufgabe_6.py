@@ -4,7 +4,7 @@
 
 import numpy as np
 
-from skimage.io import imread, imsave
+from skimage.io import imread
 
 
 
@@ -72,6 +72,18 @@ print("Anzahl ungerader Pixel: " + str(ungerade) )
 #Ansatz:
 
 
+x = np.where(img % 2 == 0)[0]
+y = np.where(img % 2 == 0)[1]
+
+print(x)
+print(y)
+
+# die beiden zusammen führen ohne schleife, but how
+# c = 
+# print (c)
+
+
+# Fabis Ansatz:
 #for gerade in np.nditer(img):
  #   if gerade % 2 == 0:
   #     ortwogerade = np.where(gerade)

@@ -4,7 +4,7 @@
 
 import numpy as np
 
-from skimage.io import imread, imsave
+from skimage.io import imread
 
 import time
 
@@ -29,11 +29,7 @@ def testePixelLoop (img):
 # 2)
 
 def testePixelBroadcast (img):
- for imgsum in np.nditer(img):
-        if 99 < imgsum < 200:
-            pass
-
-
+    np.where(np.logical_and(img>99, img<200))
 
 # 3)
 
