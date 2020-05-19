@@ -45,6 +45,7 @@ sap = np.interp(sap, (sap.min(), sap.max()), (0, 255))
 plt.imshow(sap) 
 
 
+
 # Umso höher der Wet "veraenderung" ist, desto mehr Störungen/ Noise in Form von
 # schwarzen und weißen Störungen (Salt and peper) gibt es auf dem bild
 

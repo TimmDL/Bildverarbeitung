@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from skimage.io import imread, imsave, imshow
+from skimage.io import imread
 
 import matplotlib.pyplot as plt
 
@@ -61,6 +61,8 @@ plt.imshow(neu5, cmap = "gray")
 # Aufgabenteil 5
 ergebniss =  ver1 + ver2 + ver3 + ver4 + ver5 + add2
 ergebniss = np.interp(ergebniss, (ergebniss.min(), ergebniss.max()), (0, 250))
-
 plt.imshow(ergebniss, cmap = "gray")
+plt.savefig("ergebnis.png")
+
+
 
