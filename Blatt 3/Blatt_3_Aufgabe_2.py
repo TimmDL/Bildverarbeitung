@@ -25,7 +25,7 @@ plt.imshow(add2, cmap = "gray")
 
 
 # Aufgabenteil 3
-schwellenwert = 25
+schwellenwert = 40
 
 def differenz (img, add2):
     dif = img - add2
@@ -38,33 +38,29 @@ ver3 = differenz(img3, add2)
 ver4 = differenz(img4, add2)
 ver5 = differenz(img5, add2)
 
+
 plt.imshow(ver3, cmap = "gray") 
 
 # Aufgabenteil 4
 neu = add2 + ver1
 plt.imshow(neu, cmap = "gray")
 
-neu2 = add2 + ver2
+neu2 = neu + ver2
 plt.imshow(neu2, cmap = "gray")
 
-neu3 = add2 + ver3
+neu3 = neu2 + ver3
 plt.imshow(neu3, cmap = "gray")
 
-neu4 = add2 + ver4
+neu4 = neu3 + ver4
 plt.imshow(neu4, cmap = "gray")
 
-neu5 = add2 + ver5
+neu5 = neu4 + ver5
 plt.imshow(neu5, cmap = "gray")
 
 
 # Aufgabenteil 5
-#ergebniss = neu + neu2 + neu3 + neu4 + neu5
 ergebniss =  ver1 + ver2 + ver3 + ver4 + ver5 + add2
-
 ergebniss = np.interp(ergebniss, (ergebniss.min(), ergebniss.max()), (0, 250))
-
-
-
 
 plt.imshow(ergebniss, cmap = "gray")
 
