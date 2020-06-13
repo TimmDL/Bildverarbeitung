@@ -55,9 +55,9 @@ def RGBtoHSI(img):
                r = img[n,o,0]
                g = img[n,o,1]
                b = img[n,o,2]
-               #zeta = m.acos((0.5 * ((r-g) + (r-b))) / ((((r-g)**2 + (r-b) * (g-b))**0.5) + 0.000001))
-               zeta = m.acos( (1/2 * ((r-g)+(r-b)) / (m.sqrt((r-g)**2 +(r-b) * (g-b)) + 0.001)))
-              
+               zetaRad = m.acos( (1/2 * ((r-g)+(r-b)) / (m.sqrt((r-g)**2 +(r-b) * (g-b)) + 0.001)))
+               zeta = np.degrees(zetaRad)
+               
                i = ((1/3) * (r + g + b))
                
                if (r==0 and g==0 and b==0):
@@ -69,10 +69,8 @@ def RGBtoHSI(img):
                    h = zeta
                else:
                    h = 360 - zeta
-               
-               h = h / 360  
                 
-               neu[n,o,0] = h
+               neu[n,o,0] = h / 360
                neu[n,o,1] = s
                neu[n,o,2] = i
               
@@ -88,30 +86,40 @@ def HSItoRGB(img):
            for o in range(img.shape[1]): #column 
                h = img[n,o,0] * 360
                s = img[n,o,1]
+               if(s>1):
+                   s=1    
                i = img[n,o,2]
+               if(i>1):
+                   i=1
+               if(s==0):
+                   r=g=b=i
+               else:
                
-               if(0 < h <= 120):
-                   b = i * (1 - s)
-                   r = i * ( 1 + ((s * m.cos(h)) / (m.cos(60 - h))))
-                   g = 3 * i - (r + b)
+                   if(0 <= h <= 120):
+                       b = (1/3) * (1 - s)
+                       r = (1/3) * ( 1 + ((s * m.cos(np.radians(h))) / (m.cos(np.radians(60 - h)))))
+                       g = 1 - (r + b)
 
-               if(120 < h <= 240):
-                   h = h - 120
-                   r = i * (1 - s)
-                   g = i * ( 1 + ((s * m.cos(h)) / (m.cos(60 - h))))
-                   b = 3 * i - (r + g)
+                   if(120 < h <= 240):
+                       h = h - 120
+                       r = (1/3) * (1 - s)
+                       g = (1/3) * ( 1 + ((s * m.cos(np.radians(h))) / (m.cos(np.radians(60 - h)))))
+                       b = 1 - (r + g)
 
-               if(240 < h <= 360):
-                   h = h - 240
-                   g = i * (1 - s)
-                   b = i * ( 1 + ((s * m.cos(h)) / (m.cos(60 - h))))
-                   r = 3 * i - (g + b)    
+                   if(240 < h <= 360):
+                       h = h - 240
+                       g = (1/3) * (1 - s)
+                       b = (1/3) * ( 1 + ((s * m.cos(np.radians(h))) / (m.cos(np.radians(60 - h)))))
+                       r = 1 - (g + b)    
         
-               neu[n,o,0] = r
-               neu[n,o,1] = g
-               neu[n,o,2] = b
-            
+               
+               neu[n,o,0] = r*i*3
+               neu[n,o,1] = g*i*3
+               neu[n,o,2] = b*i*3
+               
+               
     return neu       
     
 mandrillRGB2 = HSItoRGB(mandrillHSI)  
 plt.imshow(mandrillRGB2)  
+
