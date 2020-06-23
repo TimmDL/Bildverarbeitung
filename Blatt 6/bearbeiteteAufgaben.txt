@@ -9,7 +9,7 @@ Gelöste Aufgaben:
  (x) Aufgabe 2.3
  (_) Aufgabe 3
  (x) Aufgabe 4.1
- (_) Aufgabe 4.2
+ (x) Aufgabe 4.2
  (_) Aufgabe 4.3
  (_) Zusatzaufgabe 5.1
  (_) Zusatzaufgabe 5.2
