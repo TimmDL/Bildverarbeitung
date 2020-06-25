@@ -55,7 +55,38 @@ plt.imshow(gausBallon, cmap="gray")
 # im Bild viele verschiedene Farben verwendet werden.
 # Umso höher sigma wird, desto weniger gemischte Farben gibt es (sonst nur Rot,gelb,blau)
 
+#Aufgabenteil 3
+gletscher = imread("gletscher.png")
 
+ 
+max1 = 110
+max2 = 215
+ 
+def slice(img):
+    row = img.shape[0]
+    column = img.shape[1]
+    sliced = np.zeros((row,column),dtype = 'uint8')
+    for i in range(row):
+        for j in range(column):
+            if img[i,j]>max1 and img[i,j]<=max2:
+                sliced[i,j] = 127
+            else:
+                if img[i,j]>max2:
+                    sliced[i,j] = 255 
+                else:
+                    sliced[i,j] = 0
+            
+    return sliced      
+
+gletscherSliced = slice(gletscher)
+plt.imshow(gletscherSliced, cmap="gray")
+
+# Die Spizen der Berge sind relativ hell, einige Steine auf der rechten Seite 
+# sind ebenfalls relativ hell und die Steine im See sind dunkler als der See.
+
+# Dies führt dazu dass einige Bereichne nicht richtig zugeordnet werden können.
+
+   
 
 
 

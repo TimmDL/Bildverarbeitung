@@ -22,6 +22,6 @@ Gelöste Aufgaben:
 (_) Aufgabe 4.6
 (x) Zusatzaufgabe 5.1
 (x) Zusatzaufgabe 5.2
-(_) Zusatzaufgabe 5.3
+(x) Zusatzaufgabe 5.3
 (_) Zusatzaufgabe 5.4
 (_) Zusatzaufgabe 5.5
