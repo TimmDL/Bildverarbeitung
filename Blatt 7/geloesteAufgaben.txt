@@ -8,11 +8,11 @@ Gelöste Aufgaben:
 (_) Aufgabe 2.1
 (_) Aufgabe 2.2
 (_) Aufgabe 2.3
-(_) Aufgabe 3.1
-(_) Aufgabe 3.2
-(_) Aufgabe 3.3
-(_) Aufgabe 3.4
-(_) Aufgabe 3.5
+(x) Aufgabe 3.1
+(x) Aufgabe 3.2
+(x) Aufgabe 3.3
+(x) Aufgabe 3.4
+(x) Aufgabe 3.5
 (_) Aufgabe 3.6
 (_) Aufgabe 4.1
 (_) Aufgabe 4.2
