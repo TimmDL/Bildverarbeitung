@@ -20,7 +20,7 @@ Gelöste Aufgaben:
 (_) Aufgabe 4.4
 (_) Aufgabe 4.5
 (_) Aufgabe 4.6
-(_) Zusatzaufgabe 5.1
+(x) Zusatzaufgabe 5.1
 (_) Zusatzaufgabe 5.2
 (_) Zusatzaufgabe 5.3
 (_) Zusatzaufgabe 5.4
