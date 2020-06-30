@@ -28,9 +28,9 @@ def randomRiddle():
     seq[0] = randrange(10)
     
     for i in range(1,5):
-        oper = operatorList[i%3]
+        oper = operatorList[i%4]
         prev = seq[i-1]
-        number = numberList[i%3]
+        number = numberList[i%4]
         seq[i] = operators[oper](prev, number)
         
     print(seq)     
@@ -44,18 +44,6 @@ def newOperator():
     else:
         number = randrange(7)
     return operator,number
-    
-
-
-def add(number,prev):
-    return prev + number
-
-def sub(number, prev):
-    return prev - number
-
-def multipy(number, prev):
-    return 
-
 
         
     
