@@ -20,11 +20,12 @@ for i in range(blue.shape[0]): #Row
         blue[i,j] = v
 plt.imshow(opera)
 operaBlueSobel = sobel(blue)
+plt.imshow(operaBlueSobel,cmap="gray")
 ##########################################################
 
 
-operaDegree = np.arctan(operaBlueSobel)
-plt.imshow(operaDegree)
+operaDegree = np.degrees(np.arctan(operaBlueSobel))
+#plt.imshow(operaDegree, cmap="gray")
 
 for i in range(operaDegree.shape[0]): #Row
     for j in range(operaDegree.shape[1]): #column
@@ -40,7 +41,9 @@ for i in range(operaDegree.shape[0]): #Row
                 else:
                     operaDegree[i,j] = 90
                     
-plt.imshow(operaDegree, cmap="gray")                    
+plt.imshow(operaDegree, cmap="gray")     
+
+result = np.zeros(operaBlueSobel.shape)                   
                     
                 
                 
