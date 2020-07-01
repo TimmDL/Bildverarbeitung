@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 
 from skimage.filters import sobel, sobel_h, sobel_v, gaussian
 from skimage.io import imread
-import math as m
 
 #Teilaufgabe 1
 
