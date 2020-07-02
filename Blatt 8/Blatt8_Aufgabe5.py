@@ -45,8 +45,45 @@ plt.imshow(operaDegree, cmap="gray")
 
 result = np.zeros(operaBlueSobel.shape)                   
                     
+ 
+# Aufgabenteil 2               
+for i in range(1,operaDegree.shape[0]-1): #Row
+    for j in range(1,operaDegree.shape[1]-1): #column
+        degree = operaDegree[i,j] 
+        neigbor1=0
+        neigbor2=0
+        if degree==0:
+            neigbor1=operaDegree[i-1,j]
+            neigbor2=operaDegree[i+1,j]
+        elif degree==45:
+            neigbor1=operaDegree[i-1,j-1]
+            neigbor2=operaDegree[i+1,j+1]
+        elif degree==90:
+              neigbor1=operaDegree[i,j-1]
+              neigbor2=operaDegree[i,j+1]
+        else:
+            
+             neigbor2=operaDegree[i+1,j-1]
+             neigbor2=operaDegree[i-1,j+1]
+
+# Aufgabenteil 3         
+        if (degree>=neigbor1 and degree>=neigbor2):
+            result[i,j] = degree
+            
+plt.imshow(result,cmap="gray")            
+ 
+#Aufagbenteil 4           
+for i in range(result.shape[0]): #Row
+    for j in range(result.shape[1]): #column
+        if result[i,j]<90:
+            result[i,j]=0
+
+plt.imshow(result,cmap="gray")            
+                 
+                    
+                    
                 
-                
+            
 
 
 
