@@ -45,7 +45,7 @@ plt.imshow(operaDegree, cmap="gray")
 
 result = np.zeros(operaBlueSobel.shape)                   
                     
- 
+"""
 # Aufgabenteil 2               
 for i in range(1,operaDegree.shape[0]-1): #Row
     for j in range(1,operaDegree.shape[1]-1): #column
@@ -79,7 +79,7 @@ for i in range(result.shape[0]): #Row
             result[i,j]=0
 
 plt.imshow(result,cmap="gray")            
-                 
+"""                 
                     
                     
                 
